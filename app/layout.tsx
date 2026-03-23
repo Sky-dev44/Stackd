@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.className} h-full antialiased`}>
-      <body className="min-h-full px-4 flex flex-col">{children}</body>
+      <body className="min-h-full  flex flex-col">{children}</body>
     </html>
   );
 }
