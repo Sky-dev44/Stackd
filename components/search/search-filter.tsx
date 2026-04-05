@@ -1,16 +1,18 @@
 import { Categories } from "./categories";
 import { SearchInput } from "./search-input";
+import { CustomCategory } from "@/app/(app)/(home)/types";
 
 interface Props {
-  data: any;
+  data: CustomCategory[];
 }
 
 export const SearchFilters = ({ data }: Props) => {
-  console.log(data, "searchfilter");
   return (
     <div className="px-4 lg:px-12 py-8 border-b flex flex-col gap-4 w-ful">
-      <SearchInput />
-      <Categories data={data} />
+      <SearchInput data={data} />
+      <div className="hidden lg:block">
+        <Categories data={data} />
+      </div>
     </div>
   );
 };

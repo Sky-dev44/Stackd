@@ -1,8 +1,9 @@
+import { CustomCategory } from "@/app/(app)/(home)/types";
 import { Category } from "@/payload-types";
 import Link from "next/link";
 
 interface Props {
-  category: Category; //todo: change this
+  category: CustomCategory[]; //todo: change this
   isOpen: boolean;
   position: { top: number; left: number };
 }
@@ -35,7 +36,7 @@ export const SubcategoryMenu = ({ category, isOpen, position }: Props) => {
           {category.subcategories?.map((subcategory: Category) => (
             <Link
               key={subcategory.slug}
-              href={"/"}
+              href={`/${category.slug}/${subcategorys.slug}`}
               className="w-ufll text-left p-4 hover:bg-black hover:text-white flex justify-between items-center underline font-medium"
             >
               {subcategory.name}
